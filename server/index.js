@@ -14,7 +14,7 @@ var serverOne = 'http://18.220.153.50:3001',
     serverThree = 'http://localhost:3003',
     serverFour = 'http://localhost:3004'
 
-app.get('/api/:listingid/booking', proxy(serverOne));
+// app.get('/api/:listingid/booking', proxy(serverOne));
 // app.get('/api/:listingid/images', (req, res) => {
 //   axios.get(`http://54.215.150.88/api/${req.params.listingid}/images`)
 //     .then(({data}) => {
@@ -29,12 +29,12 @@ app.get('/api/:listingid/booking', proxy(serverOne));
 //     });
 // });
 
-// app.get('/api/:listingid/booking', (req, res) => {
-//   axios.get(`http://localhost:3001/api/${req.params.listingid}/booking`)
-//     .then(({data}) => {
-//     res.send(data)
-//   });
-// });
+app.get('/api/:listingid/booking', (req, res) => {
+  axios.get(`http://18.220.153.50:3001/api/${req.params.listingid}/booking`)
+    .then(({data}) => {
+    res.send(data)
+  });
+});
 
 // app.get('/listing/amenity/:listingid', (req, res) => {
 //   axios.get(`http://18.221.218.103/listing/amenity/${req.params.listingid}`)
