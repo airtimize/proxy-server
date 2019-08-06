@@ -8,7 +8,8 @@ const port = 3000;
 require('newrelic');
 // app.use(morgan('dev'));
 app.use('/rooms/:listingid', express.static(path.resolve(__dirname, '../')));
-var serverOne = 'http://localhost:3001',
+// var serverOne = 'http://localhost:3001',
+var serverOne = 'http://18.220.153.50:3001',
     serverTwo = 'http://localhost:3002',
     serverThree = 'http://localhost:3003',
     serverFour = 'http://localhost:3004'
