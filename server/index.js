@@ -7,6 +7,10 @@ const app = express();
 const port = 3000;
 require('newrelic');
 // app.use(morgan('dev'));
+app.get('/loaderio-a386cbad83809b54fee826ceecccec1a.txt', async (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'loaderio-a386cbad83809b54fee826ceecccec1a.txt'));
+});
+
 app.use('/rooms/:listingid', express.static(path.resolve(__dirname, '../')));
 // var serverOne = 'http://localhost:3001',
 var serverOne = 'http://18.220.153.50:3001',
@@ -22,12 +26,12 @@ var serverOne = 'http://18.220.153.50:3001',
 //     });
 // });
     
-// app.get('/api/:listingid/reviews', (req, res) => {
-//   axios.get(`http://13.57.195.146/api/${req.params.listingid}/reviews`)
-//     .then(({data}) => {
-//       res.send(data);
-//     });
-// });
+app.get('/api/:listingid/reviews', (req, res) => {
+  axios.get(`http://54.193.115.238:3004/api/${req.params.listingid}/reviews`)
+    .then(({data}) => {
+      res.send(data);
+    });
+});
 
 app.get('/api/:listingid/booking', (req, res) => {
   axios.get(`http://18.220.153.50:3001/api/${req.params.listingid}/booking`)
