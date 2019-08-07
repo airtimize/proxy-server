@@ -7,8 +7,8 @@ const app = express();
 const port = 3000;
 require('newrelic');
 // app.use(morgan('dev'));
-app.get('/loaderio-82e1957e74b1ade9722aaf035b98fb4c.txt', async (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'loaderio-82e1957e74b1ade9722aaf035b98fb4c.txt'));
+app.get('/loaderio-639634c663d9e2eb054c7e535abfc9b8.txt', async (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'loaderio-639634c663d9e2eb054c7e535abfc9b8.txt'));
 });
 
 app.use('/rooms/:listingid', express.static(path.resolve(__dirname, '../')));
